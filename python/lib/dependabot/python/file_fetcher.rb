@@ -10,7 +10,7 @@ require "dependabot/errors"
 module Dependabot
   module Python
     class FileFetcher < Dependabot::FileFetchers::Base
-      CHILD_REQUIREMENT_REGEX = /^-r\s?(?<path>.*\.txt)/.freeze
+      CHILD_REQUIREMENT_REGEX = /^-r\s?(?<path>.*\.(?:txt|in))/.freeze
       CONSTRAINT_REGEX = /^-c\s?(?<path>\..*)/.freeze
 
       def self.required_files_in?(filenames)
